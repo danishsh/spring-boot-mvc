@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: home-task
+  name: home-task-web
+  namespace: default
+
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: home-task
+  sessionAffinity: None
+  type: LoadBalancer
